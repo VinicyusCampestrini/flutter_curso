@@ -53,10 +53,14 @@ class ButtonText extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 30),
       child: Container(
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(10.0) // arendondar os botoes
+        ),
         //transform: Matrix4.identity()..scale(0.5)..translate(0.0,0.0),
         width: double.infinity,
         height: 50,
-        color: Colors.blue,
+        //color: Colors.blue, // deve-se colocar a cor dentro do BoxDecoration se nao da pau mane
         alignment: Alignment.center,
         child: Text(
           "Botão",
