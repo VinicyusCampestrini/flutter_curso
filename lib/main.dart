@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
             children: <Widget>[
               ButtonIcon(),
               ButtonText(),
-
             ],
           ),
         ),
@@ -32,11 +31,20 @@ class ButtonIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 30),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
       child: Container(
+        decoration: BoxDecoration(
+            color: Colors.redAccent,
+            borderRadius: BorderRadius.circular(10.0), // arendondar os botoes
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.5),
+                  offset: Offset(3.0, 5.0),
+                  blurRadius: 7),
+            ]),
+
         width: double.infinity,
         height: 50,
-        color: Colors.red,
         child: Icon(
           Icons.add,
           color: Colors.white,
@@ -47,16 +55,20 @@ class ButtonIcon extends StatelessWidget {
 }
 
 class ButtonText extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 30),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.circular(10.0) // arendondar os botoes
-        ),
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(10.0), // arendondar os botoes
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.5),
+                  offset: Offset(3.0, 5.0),
+                  blurRadius: 7),
+            ]),
         //transform: Matrix4.identity()..scale(0.5)..translate(0.0,0.0),
         width: double.infinity,
         height: 50,
