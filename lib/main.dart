@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
             children: <Widget>[
               ButtonIcon(),
               ButtonText(),
+
             ],
           ),
         ),
@@ -30,13 +31,16 @@ class MyApp extends StatelessWidget {
 class ButtonIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      height: 50,
-      color: Colors.red,
-      child: Icon(
-        Icons.add,
-        color: Colors.white,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 30),
+      child: Container(
+        width: double.infinity,
+        height: 50,
+        color: Colors.red,
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
       ),
     );
   }
@@ -45,14 +49,17 @@ class ButtonIcon extends StatelessWidget {
 class ButtonText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      height: 50,
-      color: Colors.blue,
-      alignment: Alignment.center,
-      child: Text(
-        "Botão",
-        style: TextStyle(color: Colors.white, fontSize: 18),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 30),
+      child: Container(
+        width: double.infinity,
+        height: 50,
+        color: Colors.blue,
+        alignment: Alignment.center,
+        child: Text(
+          "Botão",
+          style: TextStyle(color: Colors.white, fontSize: 18),
+        ),
       ),
     );
   }
