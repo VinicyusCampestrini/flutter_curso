@@ -47,11 +47,13 @@ class ButtonIcon extends StatelessWidget {
 }
 
 class ButtonText extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 30),
       child: Container(
+        //transform: Matrix4.identity()..scale(0.5)..translate(0.0,0.0),
         width: double.infinity,
         height: 50,
         color: Colors.blue,
