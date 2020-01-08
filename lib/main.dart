@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Container(
+          color: Colors.greenAccent,
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +30,10 @@ class MyApp extends StatelessWidget {
                   Container(
                     width: 50,
                     height: 50,
-                    color: Colors.cyan,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100.0),
+                      color: Colors.cyan,
+                    ),
                   ),
                   Container(
                     width: 50,
@@ -39,8 +43,10 @@ class MyApp extends StatelessWidget {
                   Container(
                     width: 50,
                     height: 50,
-                    color: Colors.pink,
-                  )
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100.0),
+                        color: Colors.pink),
+                  ),
                 ],
               )
             ],
@@ -112,31 +118,37 @@ class ButtonTextIcon extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
       child: Container(
-        decoration: BoxDecoration(
-            color: Colors.redAccent,
-            borderRadius: BorderRadius.circular(10.0), // arendondar os botoes
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                  color: Colors.black.withOpacity(0.5),
-                  offset: Offset(3.0, 5.0),
-                  blurRadius: 7),
-            ]),
-        width: double.infinity,
-        height: 50,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-          Icon(
-            Icons.whatshot,
-            color: Colors.white,
-          ),
-          SizedBox(width: 10,),
-          Text(
-            "Botão",
-            style: TextStyle(color: Colors.white, fontSize: 18),
-          ),
-        ],)
-      ),
+          decoration: BoxDecoration(
+              color: Colors.redAccent,
+              borderRadius: BorderRadius.circular(10.0), // arendondar os botoes
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.5),
+                    offset: Offset(3.0, 5.0),
+                    blurRadius: 7),
+              ]),
+          width: double.infinity,
+          height: 50,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: Icon(
+                  Icons.whatshot,
+                  color: Colors.white,
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Text(
+                  "Botão",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ),
+            ],
+          )),
     );
   }
 }
