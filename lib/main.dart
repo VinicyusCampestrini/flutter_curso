@@ -14,7 +14,10 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Container(
-          color: Colors.greenAccent,
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage("assets/novo1.png",),
+            fit: BoxFit.cover)
+          ),
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
