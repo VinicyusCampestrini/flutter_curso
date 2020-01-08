@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              
+              Image.asset("assets/logo.png",  width: 300, height: 300,),
+              
               ButtonTextIcon(
                 color: Colors.red,
                 text: "Login com o google",
