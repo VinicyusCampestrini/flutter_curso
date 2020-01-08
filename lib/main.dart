@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'button_text_icon.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -18,9 +20,16 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              ButtonIcon(),
-              ButtonText(),
-              ButtonTextIcon(),
+              ButtonTextIcon(
+                color: Colors.red,
+                text: "Login com o google",
+                iconData: Icons.g_translate,
+              ),
+              ButtonTextIcon(
+                color: Colors.blue,
+                text: "Login com o Facebook",
+                iconData: Icons.face,
+              ),
               SizedBox(
                 height: 30,
               ),
@@ -57,98 +66,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class ButtonIcon extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.redAccent,
-            borderRadius: BorderRadius.circular(10.0), // arendondar os botoes
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                  color: Colors.black.withOpacity(0.5),
-                  offset: Offset(3.0, 5.0),
-                  blurRadius: 7),
-            ]),
-        width: double.infinity,
-        height: 50,
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
-      ),
-    );
-  }
-}
-
-class ButtonText extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(10.0), // arendondar os botoes
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                  color: Colors.black.withOpacity(0.5),
-                  offset: Offset(3.0, 5.0),
-                  blurRadius: 7),
-            ]),
-        //transform: Matrix4.identity()..scale(0.5)..translate(0.0,0.0),
-        width: double.infinity,
-        height: 50,
-        //color: Colors.blue, // deve-se colocar a cor dentro do BoxDecoration se nao da pau mane
-        alignment: Alignment.center,
-        child: Text(
-          "Botão",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
-    );
-  }
-}
-
-class ButtonTextIcon extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
-      child: Container(
-          decoration: BoxDecoration(
-              color: Colors.redAccent,
-              borderRadius: BorderRadius.circular(10.0), // arendondar os botoes
-              boxShadow: <BoxShadow>[
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.5),
-                    offset: Offset(3.0, 5.0),
-                    blurRadius: 7),
-              ]),
-          width: double.infinity,
-          height: 50,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: Icon(
-                  Icons.whatshot,
-                  color: Colors.white,
-                ),
-              ),
-              Expanded(
-                flex: 2,
-                child: Text(
-                  "Botão",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                ),
-              ),
-            ],
-          )),
-    );
-  }
-}
